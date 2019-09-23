@@ -4,6 +4,7 @@ pipeline {
         stage('Obtener_Codigo'){
             steps{
                 checkout scm
+                sh 'echo ${GIT_TAG_MESSAGE}'
             }
         }
     }
