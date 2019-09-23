@@ -3,9 +3,7 @@ pipeline {
     stages {
         stage('Obtener_Codigo'){
             steps{
-                git url: 'https://github.com/jenkinsci/git-tag-message-plugin'
-                GIT_TAG_NAME = gitTagName()
-                GIT_TAG_MESSAGE = gitTagMessage()
+                checkout scm
             }
         }
     }
