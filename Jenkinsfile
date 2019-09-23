@@ -4,6 +4,7 @@ pipeline {
         stage('Obtener_Codigo'){
             steps{
                 script{
+                    git url: 'https://github.com/jenkinsci/git-tag-message-plugin'
                     env.GIT_TAG_NAME = gitTagName()
                     env.GIT_TAG_MESSAGE = gitTagMessage()
                     sh 'echo ${GIT_TAG_MESSAGE}  ${GIT_TAG_MESSAGE}'
