@@ -4,9 +4,12 @@ pipeline {
         stage('Obtener_Codigo'){
             steps{
                 checkout scm
-                env.GIT_TAG_NAME = gitTagName()
-                env.GIT_TAG_MESSAGE = gitTagMessage()
-                sh 'echo ${GIT_TAG_MESSAGE}'
+                script{
+                    env.GIT_TAG_NAME = gitTagName()
+                    env.GIT_TAG_MESSAGE = gitTagMessage()
+                    sh 'echo ${GIT_TAG_MESSAGE}'
+                }
+                
             }
         }
     }
